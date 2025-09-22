@@ -6,7 +6,6 @@
   <title>JustBook - Workers & Customers</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* General Styles */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -16,15 +15,12 @@
       line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     /* Header */
     header {
       background: linear-gradient(135deg, #2f7d32, #4caf50);
-      padding: 40px 20px;
+      padding: 50px 20px;
       text-align: center;
       color: white;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -38,105 +34,136 @@
     }
 
     header h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin: 0;
       font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      animation: fadeDown 1.5s ease-in-out;
     }
 
     header p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       margin-top: 10px;
       font-weight: 500;
+      animation: fadeUp 1.5s ease-in-out;
     }
 
-    /* Section Styles */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sections */
     section {
-      padding: 40px 20px;
-      max-width: 1000px;
+      padding: 50px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
     h2 {
-      font-size: 2em;
+      font-size: 2.2em;
       color: #2f7d32;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       position: relative;
     }
-
     h2::after {
       content: '';
       display: block;
-      width: 60px;
+      width: 70px;
       height: 4px;
       background: #4caf50;
-      margin: 10px auto 0 auto;
+      margin: 12px auto 0 auto;
       border-radius: 2px;
     }
 
-    p {
-      margin-bottom: 20px;
-      font-size: 1.1em;
+    /* Paragraph card style */
+    .para-card {
+      background: #f9fff9;
+      border-radius: 15px;
+      padding: 20px 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .para-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    ul {
-      margin-left: 20px;
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      background: #f0fff0;
-      margin-bottom: 12px;
-      padding: 12px 15px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    ul li:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    }
-
-    /* GIF Card */
+    /* GIF */
     .gif-container {
       text-align: center;
-      margin: 40px 0;
-      padding: 20px;
+      margin: 50px 0;
+      padding: 25px;
       background: #ffffffcc;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      border: 3px solid #4caf50;
     }
-
     .gif-container img {
-      max-width: 320px;
-      border-radius: 12px;
+      max-width: 330px;
+      border-radius: 15px;
     }
-
     .gif-container p {
       margin-top: 15px;
       font-weight: 500;
-      font-size: 1.1em;
+      font-size: 1.2em;
     }
 
-    /* Download Buttons */
+    /* Steps Section */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 20px;
+    }
+    .step {
+      background: #f0fff0;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      position: relative;
+    }
+    .step:hover { transform: translateY(-6px); }
+    .step::before {
+      content: attr(data-step);
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      background: #4caf50;
+      color: white;
+      font-weight: bold;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1.1em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .step h3 { margin-top: 0; color: #2f7d32; }
+
+    /* Download Section */
     .download {
       text-align: center;
-      margin: 50px 0;
+      margin: 60px 0;
     }
-
     .download a img {
       width: 180px;
       margin: 15px;
       border-radius: 15px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.4s, box-shadow 0.4s;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-
     .download a img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
     /* Footer */
@@ -144,18 +171,17 @@
       background: linear-gradient(135deg, #2f7d32, #4caf50);
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       font-weight: 500;
       font-size: 1em;
-      margin-top: 20px;
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+      margin-top: 40px;
     }
 
     @media(max-width:768px){
-      header h1 { font-size: 2em; }
-      h2 { font-size: 1.7em; }
+      header h1 { font-size: 2.2em; }
+      h2 { font-size: 1.8em; }
       .gif-container img { max-width: 250px; }
-      .download a img { width: 140px; margin: 10px; }
+      .download a img { width: 150px; margin: 10px; }
     }
   </style>
 </head>
@@ -171,22 +197,26 @@
   <!-- About Section -->
   <section>
     <h2>About Us / हमारे बारे में</h2>
-    <p>At JustBook, we connect people with workers instantly. No middlemen, no hassle – just reliable workers at fair prices.  
-      <br><br>
-      JustBook पर हम लोगों को तुरंत वर्करों से जोड़ते हैं। न कोई बिचौलिया, न कोई झंझट – बस भरोसेमंद वर्कर सही दामों पर।
-    </p>
-    <p>Our Story: At JustBook, we believe everyone deserves easy access to work and workers. Traditionally, workers stand at labour chowks or wait for opportunities, while people looking for help waste time asking around. We created JustBook to solve this gap with technology.  
-      <br><br>
-      JustBook पर हम मानते हैं कि हर किसी को आसानी से काम और वर्करों तक पहुँच मिलनी चाहिए। परंपरागत रूप से वर्कर लेबर चौकों पर खड़े रहते हैं या अवसरों का इंतजार करते हैं, जबकि मदद लेने वाले लोग समय बर्बाद करते हैं। हमने JustBook इस अंतर को तकनीक के माध्यम से पूरा करने के लिए बनाया।
-    </p>
-    <p>What We Do: We provide a digital space where customers can find and book skilled or unskilled workers directly, and workers can showcase their skills, set their own prices, and get fair opportunities.  
-      <br><br>
-      हम एक डिजिटल प्लेटफ़ॉर्म प्रदान करते हैं जहाँ कस्टमर सीधे कुशल या अकुशल वर्कर को ढूंढ और बुक कर सकते हैं, और वर्कर अपनी क्षमताएँ दिखा सकते हैं, कीमत तय कर सकते हैं और उचित अवसर प्राप्त कर सकते हैं।
-    </p>
-    <p>Our Vision: To empower workers with more job opportunities and to help customers find reliable people instantly – all without middlemen.  
-      <br><br>
-      हमारा लक्ष्य है कि वर्करों को अधिक अवसर मिलें और कस्टमर को भरोसेमंद लोग तुरंत मिलें – बिना किसी बिचौलिये के।
-    </p>
+
+    <div class="para-card">
+      <p>At JustBook, we connect people with workers instantly. No middlemen, no hassle – just reliable workers at fair prices.<br><br>
+      JustBook पर हम लोगों को तुरंत वर्करों से जोड़ते हैं। न कोई बिचौलिया, न कोई झंझट – बस भरोसेमंद वर्कर सही दामों पर।</p>
+    </div>
+
+    <div class="para-card">
+      <p>Our Story: At JustBook, we believe everyone deserves easy access to work and workers. Traditionally, workers stand at labour chowks or wait for opportunities, while people looking for help waste time asking around. We created JustBook to solve this gap with technology.<br><br>
+      JustBook पर हम मानते हैं कि हर किसी को आसानी से काम और वर्करों तक पहुँच मिलनी चाहिए। परंपरागत रूप से वर्कर लेबर चौकों पर खड़े रहते हैं या अवसरों का इंतजार करते हैं, जबकि मदद लेने वाले लोग समय बर्बाद करते हैं। हमने JustBook इस अंतर को तकनीक के माध्यम से पूरा करने के लिए बनाया।</p>
+    </div>
+
+    <div class="para-card">
+      <p>What We Do: We provide a digital space where customers can find and book skilled or unskilled workers directly, and workers can showcase their skills, set their own prices, and get fair opportunities.<br><br>
+      हम एक डिजिटल प्लेटफ़ॉर्म प्रदान करते हैं जहाँ कस्टमर सीधे कुशल या अकुशल वर्कर को ढूंढ और बुक कर सकते हैं, और वर्कर अपनी क्षमताएँ दिखा सकते हैं, कीमत तय कर सकते हैं और उचित अवसर प्राप्त कर सकते हैं।</p>
+    </div>
+
+    <div class="para-card">
+      <p>Our Vision: To empower workers with more job opportunities and to help customers find reliable people instantly – all without middlemen.<br><br>
+      हमारा लक्ष्य है कि वर्करों को अधिक अवसर मिलें और कस्टमर को भरोसेमंद लोग तुरंत मिलें – बिना किसी बिचौलिये के।</p>
+    </div>
 
     <div class="gif-container">
       <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnAxdXo4cHQycG5qcmg0bzZxbzJhMnNyYzdzZXNvbzV2YXV0Y3Y1aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/X4ub3IJZzsEy6fBnDb/giphy.gif" alt="Handshake Relationship">
@@ -197,22 +227,23 @@
   <!-- How It Works -->
   <section>
     <h2>How It Works / यह कैसे काम करता है</h2>
-    <p><strong>For Customers (Hiring people):</strong></p>
-    <ul>
-      <li>Open the JustBook app / JustBook ऐप खोलें।</li>
-      <li>Choose the type of work you need. / जिस प्रकार का काम चाहिए उसे चुनें।</li>
-      <li>See profiles of available workers. / उपलब्ध वर्करों की प्रोफाइल देखें।</li>
-      <li>Select and book directly. / सीधे चुनें और बुक करें।</li>
-      <li>Pay directly to the worker after the job is done. / काम पूरा होने के बाद सीधे वर्कर को भुगतान करें।</li>
-    </ul>
 
-    <p><strong>For Workers (Finding work):</strong></p>
-    <ul>
-      <li>Register for free on JustBook. / JustBook पर मुफ्त में रजिस्टर करें।</li>
-      <li>Showcase your skills and availability. / अपनी क्षमताएँ और उपलब्धता दिखाएँ।</li>
-      <li>Get booked by customers directly. / कस्टमर द्वारा सीधे बुक किए जाएँ।</li>
-      <li>Earn fair opportunities and payment. / उचित अवसर और भुगतान प्राप्त करें।</li>
-    </ul>
+    <p><strong>For Customers (Hiring people):</strong></p>
+    <div class="steps">
+      <div class="step" data-step="1"><h3>Open the JustBook app</h3><p>JustBook ऐप खोलें।</p></div>
+      <div class="step" data-step="2"><h3>Choose work type</h3><p>जिस प्रकार का काम चाहिए उसे चुनें।</p></div>
+      <div class="step" data-step="3"><h3>See profiles</h3><p>उपलब्ध वर्करों की प्रोफाइल देखें।</p></div>
+      <div class="step" data-step="4"><h3>Select & Book</h3><p>सीधे चुनें और बुक करें।</p></div>
+      <div class="step" data-step="5"><h3>Pay after work</h3><p>काम पूरा होने के बाद सीधे वर्कर को भुगतान करें।</p></div>
+    </div>
+
+    <p style="margin-top:40px;"><strong>For Workers (Finding work):</strong></p>
+    <div class="steps">
+      <div class="step" data-step="1"><h3>Register Free</h3><p>JustBook पर मुफ्त में रजिस्टर करें।</p></div>
+      <div class="step" data-step="2"><h3>Showcase Skills</h3><p>अपनी क्षमताएँ और उपलब्धता दिखाएँ।</p></div>
+      <div class="step" data-step="3"><h3>Get Booked</h3><p>कस्टमर द्वारा सीधे बुक किए जाएँ।</p></div>
+      <div class="step" data-step="4"><h3>Earn Fairly</h3><p>उचित अवसर और भुगतान प्राप्त करें।</p></div>
+    </div>
   </section>
 
   <!-- Download Section -->
