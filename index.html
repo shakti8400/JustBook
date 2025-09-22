@@ -1,252 +1,236 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JustBook - Workers & Customers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #eaf7ea, #ffffff);
+      color: #1e3d1e;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #2f7d32, #4caf50);
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 15px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.1em;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #2f7d32;
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #4caf50;
+      margin: 10px auto 0 auto;
+      border-radius: 2px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+
+    ul {
+      margin-left: 20px;
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #f0fff0;
+      margin-bottom: 12px;
+      padding: 12px 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    ul li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    /* GIF Card */
+    .gif-container {
+      text-align: center;
+      margin: 40px 0;
+      padding: 20px;
+      background: #ffffffcc;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .gif-container img {
+      max-width: 320px;
+      border-radius: 12px;
+    }
+
+    .gif-container p {
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 1.1em;
+    }
+
+    /* Download Buttons */
+    .download {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .download a img {
+      width: 180px;
+      margin: 15px;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .download a img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #2f7d32, #4caf50);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-weight: 500;
+      font-size: 1em;
+      margin-top: 20px;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+    }
+
+    @media(max-width:768px){
+      header h1 { font-size: 2em; }
+      h2 { font-size: 1.7em; }
+      .gif-container img { max-width: 250px; }
+      .download a img { width: 140px; margin: 10px; }
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;JustBook - Workers &amp; Customers&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* General Styles */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Roboto', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(to bottom, #eaf7ea, #ffffff);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #1e3d1e;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>a {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: inherit;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Header */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, #2f7d32, #4caf50);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 40px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 12px rgba(0,0,0,0.2);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>header img {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 120px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 8px rgba(0,0,0,0.3);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>header h1 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2.5em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>header p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.1em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Section Styles */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>section {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 40px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 1000px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: auto;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>h2 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #2f7d32;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>h2::after {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: '';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 60px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #4caf50;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 10px auto 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.1em;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>ul {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-left: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>list-style: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>ul li {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #f0fff0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 2px 6px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: transform 0.2s, box-shadow 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>ul li:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(-3px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 6px 15px rgba(0,0,0,0.15);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* GIF Card */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.gif-container {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 40px 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #ffffffcc;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 6px 20px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.gif-container img {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 320px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.gif-container p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.1em;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Download Buttons */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.download {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 50px 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.download a img {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 180px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: transform 0.3s, box-shadow 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 12px rgba(0,0,0,0.2);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.download a img:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: scale(1.05);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 6px 18px rgba(0,0,0,0.3);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Footer */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, #2f7d32, #4caf50);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 -4px 12px rgba(0,0,0,0.2);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media(max-width:768px){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>header h1 { font-size: 2em; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>h2 { font-size: 1.7em; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.gif-container img { max-width: 250px; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.download a img { width: 140px; margin: 10px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Header --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="9D5CC5B2-A063-42D4-AE40-9323AD34F1A6.png" alt="JustBook Logo"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Need a Worker? JustBook!&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;काम आसान, वर्कर आपके पास – JustBook के साथ!&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- About Section --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;About Us / हमारे बारे में&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;At JustBook, we connect people with workers instantly. No middlemen, no hassle – just reliable workers at fair prices. <span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>JustBook पर हम लोगों को तुरंत वर्करों से जोड़ते हैं। न कोई बिचौलिया, न कोई झंझट – बस भरोसेमंद वर्कर सही दामों पर।</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Our Story: At JustBook, we believe everyone deserves easy access to work and workers. Traditionally, workers stand at labour chowks or wait for opportunities, while people looking for help waste time asking around. We created JustBook to solve this gap with technology. <span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>JustBook पर हम मानते हैं कि हर किसी को आसानी से काम और वर्करों तक पहुँच मिलनी चाहिए। परंपरागत रूप से वर्कर लेबर चौकों पर खड़े रहते हैं या अवसरों का इंतजार करते हैं, जबकि मदद लेने वाले लोग समय बर्बाद करते हैं। हमने JustBook इस अंतर को तकनीक के माध्यम से पूरा करने के लिए बनाया।</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;What We Do: We provide a digital space where customers can find and book skilled or unskilled workers directly, and workers can showcase their skills, set their own prices, and get fair opportunities. <span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>हम एक डिजिटल प्लेटफ़ॉर्म प्रदान करते हैं जहाँ कस्टमर सीधे कुशल या अकुशल वर्कर को ढूंढ और बुक कर सकते हैं, और वर्कर अपनी क्षमताएँ दिखा सकते हैं, कीमत तय कर सकते हैं और उचित अवसर प्राप्त कर सकते हैं।</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Our Vision: To empower workers with more job opportunities and to help customers find reliable people instantly – all without middlemen. <span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>हमारा लक्ष्य है कि वर्करों को अधिक अवसर मिलें और कस्टमर को भरोसेमंद लोग तुरंत मिलें – बिना किसी बिचौलिये के।</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="gif-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnAxdXo4cHQycG5qcmg0bzZxbzJhMnNyYzdzZXNvbzV2YXV0Y3Y1aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/X4ub3IJZzsEy6fBnDb/giphy.gif" alt="Handshake Relationship"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Connecting Workers &amp; Users / वर्कर और यूज़र को जोड़ना&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- How It Works --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;How It Works / यह कैसे काम करता है&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;strong&gt;For Customers (Hiring people):&lt;/strong&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Open the JustBook app / JustBook ऐप खोलें।&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Choose the type of work you need. / जिस प्रकार का काम चाहिए उसे चुनें।&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;See profiles of available workers. / उपलब्ध वर्करों की प्रोफाइल देखें।&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Select and book directly. / सीधे चुनें और बुक करें।&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Pay directly to the worker after the job is done. / काम पूरा होने के बाद सीधे वर्कर को भुगतान करें।&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;strong&gt;For Workers (Finding work):&lt;/strong&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Register for free on JustBook. / JustBook पर मुफ्त में रजिस्टर करें।&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Showcase your skills and availability. / अपनी क्षमताएँ और उपलब्धता दिखाएँ।&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Get booked by customers directly. / कस्टमर द्वारा सीधे बुक किए जाएँ।&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li&gt;Earn fair opportunities and payment. / उचित अवसर और भुगतान प्राप्त करें।&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Download Section --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="download"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Download the App / ऐप डाउनलोड करें&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;JustBook is available on Google Play Store and Apple App Store. / JustBook अब Google Play Store और Apple App Store पर उपलब्ध है।&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://play.google.com/store" target="_blank"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://www.apple.com/in/app-store/" target="_blank"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Footer --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>© 2025 JustBook | Empowering Workers, Helping People</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+  <!-- Header -->
+  <header>
+    <img src="9D5CC5B2-A063-42D4-AE40-9323AD34F1A6.png" alt="JustBook Logo">
+    <h1>Need a Worker? JustBook!</h1>
+    <p>काम आसान, वर्कर आपके पास – JustBook के साथ!</p>
+  </header>
+
+  <!-- About Section -->
+  <section>
+    <h2>About Us / हमारे बारे में</h2>
+    <p>At JustBook, we connect people with workers instantly. No middlemen, no hassle – just reliable workers at fair prices.  
+      <br><br>
+      JustBook पर हम लोगों को तुरंत वर्करों से जोड़ते हैं। न कोई बिचौलिया, न कोई झंझट – बस भरोसेमंद वर्कर सही दामों पर।
+    </p>
+    <p>Our Story: At JustBook, we believe everyone deserves easy access to work and workers. Traditionally, workers stand at labour chowks or wait for opportunities, while people looking for help waste time asking around. We created JustBook to solve this gap with technology.  
+      <br><br>
+      JustBook पर हम मानते हैं कि हर किसी को आसानी से काम और वर्करों तक पहुँच मिलनी चाहिए। परंपरागत रूप से वर्कर लेबर चौकों पर खड़े रहते हैं या अवसरों का इंतजार करते हैं, जबकि मदद लेने वाले लोग समय बर्बाद करते हैं। हमने JustBook इस अंतर को तकनीक के माध्यम से पूरा करने के लिए बनाया।
+    </p>
+    <p>What We Do: We provide a digital space where customers can find and book skilled or unskilled workers directly, and workers can showcase their skills, set their own prices, and get fair opportunities.  
+      <br><br>
+      हम एक डिजिटल प्लेटफ़ॉर्म प्रदान करते हैं जहाँ कस्टमर सीधे कुशल या अकुशल वर्कर को ढूंढ और बुक कर सकते हैं, और वर्कर अपनी क्षमताएँ दिखा सकते हैं, कीमत तय कर सकते हैं और उचित अवसर प्राप्त कर सकते हैं।
+    </p>
+    <p>Our Vision: To empower workers with more job opportunities and to help customers find reliable people instantly – all without middlemen.  
+      <br><br>
+      हमारा लक्ष्य है कि वर्करों को अधिक अवसर मिलें और कस्टमर को भरोसेमंद लोग तुरंत मिलें – बिना किसी बिचौलिये के।
+    </p>
+
+    <div class="gif-container">
+      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnAxdXo4cHQycG5qcmg0bzZxbzJhMnNyYzdzZXNvbzV2YXV0Y3Y1aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/X4ub3IJZzsEy6fBnDb/giphy.gif" alt="Handshake Relationship">
+      <p>Connecting Workers & Users / वर्कर और यूज़र को जोड़ना</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section>
+    <h2>How It Works / यह कैसे काम करता है</h2>
+    <p><strong>For Customers (Hiring people):</strong></p>
+    <ul>
+      <li>Open the JustBook app / JustBook ऐप खोलें।</li>
+      <li>Choose the type of work you need. / जिस प्रकार का काम चाहिए उसे चुनें।</li>
+      <li>See profiles of available workers. / उपलब्ध वर्करों की प्रोफाइल देखें।</li>
+      <li>Select and book directly. / सीधे चुनें और बुक करें।</li>
+      <li>Pay directly to the worker after the job is done. / काम पूरा होने के बाद सीधे वर्कर को भुगतान करें।</li>
+    </ul>
+
+    <p><strong>For Workers (Finding work):</strong></p>
+    <ul>
+      <li>Register for free on JustBook. / JustBook पर मुफ्त में रजिस्टर करें।</li>
+      <li>Showcase your skills and availability. / अपनी क्षमताएँ और उपलब्धता दिखाएँ।</li>
+      <li>Get booked by customers directly. / कस्टमर द्वारा सीधे बुक किए जाएँ।</li>
+      <li>Earn fair opportunities and payment. / उचित अवसर और भुगतान प्राप्त करें।</li>
+    </ul>
+  </section>
+
+  <!-- Download Section -->
+  <section class="download">
+    <h2>Download the App / ऐप डाउनलोड करें</h2>
+    <p>JustBook is available on Google Play Store and Apple App Store. / JustBook अब Google Play Store और Apple App Store पर उपलब्ध है।</p>
+    <a href="https://play.google.com/store" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+    </a>
+    <a href="https://www.apple.com/in/app-store/" target="_blank">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 JustBook | Empowering Workers, Helping People
+  </footer>
+
 </body>
 </html>
