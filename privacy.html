@@ -12,9 +12,9 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #eaf7ea, #ffffff);
-      color: #1e3d1e;
-      line-height: 1.7;
+      background: #ffffff;
+      color: #222;
+      line-height: 1.6;
     }
 
     header {
@@ -44,52 +44,20 @@
       font-weight: 500;
     }
 
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
+    .content {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+      font-size: 14px;
     }
 
-    h2 {
-      font-size: 2em;
-      color: #2f7d32;
-      text-align: center;
-      margin-bottom: 35px;
-      position: relative;
-    }
-
-    h2::after {
-      content: '';
-      display: block;
-      width: 70px;
-      height: 4px;
-      background: #4caf50;
-      margin: 12px auto 0;
-      border-radius: 2px;
-    }
-
-    .policy-card {
-      background: #f9fff9;
-      border-radius: 15px;
-      padding: 25px 28px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 25px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .policy-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    .policy-card h3 {
-      margin-top: 0;
-      color: #2f7d32;
-      font-size: 1.3em;
-    }
-
-    ul {
+    .content ul {
       padding-left: 20px;
+      margin: 0;
+    }
+
+    .content li {
+      margin-bottom: 10px;
     }
 
     footer {
@@ -101,10 +69,15 @@
       margin-top: 40px;
     }
 
+    a {
+      color: #2f7d32;
+      text-decoration: none;
+    }
+
     @media(max-width:768px){
       header h1 { font-size: 2.2em; }
-      h2 { font-size: 1.7em; }
       header img { width: 90px; }
+      .content { font-size: 13px; }
     }
   </style>
 </head>
@@ -119,102 +92,21 @@
   </header>
 
   <!-- Content -->
-  <section>
-
-    <div class="policy-card">
-      <h3>Introduction</h3>
-      <p>
-        JustBook respects your privacy and is committed to protecting your personal information.
-        This Privacy Policy explains how we collect, use, and safeguard your data when you use the JustBook app.
-      </p>
-    </div>
-
-    <div class="policy-card">
-      <h3>Information We Collect</h3>
-      <ul>
-        <li>Name, phone number, and basic profile details</li>
-        <li>Location data to show nearby workers or customers</li>
-        <li>Service preferences and booking details</li>
-        <li>App usage and interaction data</li>
-      </ul>
-    </div>
-
-    <div class="policy-card">
-      <h3>How We Use Your Information</h3>
-      <ul>
-        <li>To connect workers and customers directly</li>
-        <li>To improve the JustBook app experience</li>
-        <li>To maintain safety, trust, and transparency</li>
-        <li>To provide customer support and service updates</li>
-      </ul>
-    </div>
-
-    <div class="policy-card">
-      <h3>Data Sharing</h3>
-      <p>
-        JustBook does <strong>not</strong> sell or rent your personal data.
-        Information is shared only between workers and customers for booking-related purposes.
-      </p>
-    </div>
-
-    <div class="policy-card">
-      <h3>Payments</h3>
-      <p>
-        Payments are made directly between customers and workers.
-        JustBook does not store any sensitive payment information.
-      </p>
-    </div>
-
-    <div class="policy-card">
-      <h3>Security</h3>
-      <p>
-        We use reasonable security measures to protect your personal data from unauthorized access,
-        misuse, or loss.
-      </p>
-    </div>
-
-    <div class="policy-card">
-      <h3>User Rights</h3>
-      <ul>
-        <li>You may edit or update your profile information</li>
-        <li>You may request deletion of your account</li>
-        <li>You control the information you choose to share</li>
-      </ul>
-    </div>
-
-    <div class="policy-card">
-      <h3>Policy Updates</h3>
-      <p>
-        JustBook may update this Privacy Policy from time to time.
-        Any changes will be reflected on this page.
-      </p>
-    </div>
-
-    <div class="policy-card">
-      <h3>Contact Us</h3>
-      <p>
-        If you have any questions regarding this Privacy Policy, please contact us at:<br>
-        <strong>Email:</strong> support@justbook.app
-      </p>
-    </div>
-
-  </section>
-
-    <!-- CONTACT SECTION -->
-<section>
-  <h2>Contact Us / संपर्क करें</h2>
-
-  <div class="para-card" style="text-align:center;">
-    <p>
-      Have questions or need support?<br>
-      किसी भी जानकारी या सहायता के लिए संपर्क करें
-    </p>
-
-    <p style="font-size:1.2em; font-weight:600;">
-      📞 Mobile: <a href="tel:7819844425">7819844425</a>
-    </p>
+  <div class="content">
+    <ul>
+      <li>JustBook respects your privacy and is committed to protecting your personal information.</li>
+      <li>This Privacy Policy explains how we collect, use, and safeguard your data when you use the JustBook app.</li>
+      <li>We may collect your name, phone number, basic profile details, location data, service preferences, booking details, and app usage data.</li>
+      <li>Your information is used to connect workers and customers, improve app experience, maintain safety and transparency, and provide support and updates.</li>
+      <li>JustBook does not sell or rent your personal data.</li>
+      <li>Information is shared only between workers and customers for booking-related purposes.</li>
+      <li>Payments are made directly between customers and workers, and JustBook does not store sensitive payment information.</li>
+      <li>We use reasonable security measures to protect your data from unauthorized access, misuse, or loss.</li>
+      <li>You may edit or update your profile information, request account deletion, and control the information you choose to share.</li>
+      <li>JustBook may update this Privacy Policy from time to time, and changes will be reflected on this page.</li>
+      <li>If you have any questions, contact us at <strong>support@justbook.co.in</strong> or call <a href="tel:7819844425">7819844425</a>.</li>
+    </ul>
   </div>
-</section>
 
   <!-- Footer -->
   <footer>
