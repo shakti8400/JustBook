@@ -1,285 +1,162 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JustBook - Workers & Customers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #eaf7ea, #ffffff);
-      color: #1e3d1e;
-      line-height: 1.6;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy - DailyKit</title>
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --card-bg: #ffffff;
+    --text: #1e1e1e;
+    --muted: #5f5f5f;
+    --accent: #2f6f4f;
+    --border: #e6e6e2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171a;
+      --card-bg: #1e2124;
+      --text: #eaeaea;
+      --muted: #a3a3a3;
+      --accent: #6fbf94;
+      --border: #2b2f33;
     }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171a;
+    --card-bg: #1e2124;
+    --text: #eaeaea;
+    --muted: #a3a3a3;
+    --accent: #6fbf94;
+    --border: #2b2f33;
+  }
 
-    a { text-decoration: none; color: inherit; }
+  * { box-sizing: border-box; }
 
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #2f7d32, #4caf50);
-      padding: 50px 20px;
-      text-align: center;
-      color: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
 
-    header img {
-      width: 120px;
-      margin-bottom: 15px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
+  body {
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
 
-    header h1 {
-      font-size: 2.8em;
-      margin: 0;
-      font-weight: 700;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-      animation: fadeDown 1.5s ease-in-out;
-    }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 20px 64px;
+  }
 
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      font-weight: 500;
-      animation: fadeUp 1.5s ease-in-out;
-    }
+  header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
 
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  .logo-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: var(--accent);
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
 
-    /* Sections */
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+  h1 {
+    font-size: 1.6rem;
+    margin: 0 0 6px;
+  }
 
-    h2 {
-      font-size: 2.2em;
-      color: #2f7d32;
-      text-align: center;
-      margin-bottom: 40px;
-      position: relative;
-    }
-    h2::after {
-      content: '';
-      display: block;
-      width: 70px;
-      height: 4px;
-      background: #4caf50;
-      margin: 12px auto 0 auto;
-      border-radius: 2px;
-    }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
 
-    /* Paragraph card style */
-    .para-card {
-      background: #f9fff9;
-      border-radius: 15px;
-      padding: 20px 25px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 25px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .para-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-top: 24px;
+  }
 
-    /* GIF */
-    .gif-container {
-      text-align: center;
-      margin: 50px 0;
-      padding: 25px;
-      background: #ffffffcc;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      border: 3px solid #4caf50;
-    }
-    .gif-container img {
-      max-width: 330px;
-      border-radius: 15px;
-    }
-    .gif-container p {
-      margin-top: 15px;
-      font-weight: 500;
-      font-size: 1.2em;
-    }
+  .card p {
+    margin: 0 0 16px;
+  }
 
-    /* Steps Section */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 20px;
-    }
-    .step {
-      background: #f0fff0;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      position: relative;
-    }
-    .step:hover { transform: translateY(-6px); }
-    .step::before {
-      content: attr(data-step);
-      position: absolute;
-      top: -15px;
-      left: -15px;
-      background: #4caf50;
-      color: white;
-      font-weight: bold;
-      width: 38px;
-      height: 38px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      font-size: 1.1em;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .step h3 { margin-top: 0; color: #2f7d32; }
+  .card p:last-child {
+    margin-bottom: 0;
+  }
 
-    /* Download Section */
-    .download {
-      text-align: center;
-      margin: 60px 0;
-    }
-    .download a img {
-      width: 180px;
-      margin: 15px;
-      border-radius: 15px;
-      transition: transform 0.4s, box-shadow 0.4s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .download a img:hover {
-      transform: scale(1.08) rotate(-2deg);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 20px 0 0;
+  }
 
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, #2f7d32, #4caf50);
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-weight: 500;
-      font-size: 1em;
-      margin-top: 40px;
-    }
+  .badge {
+    font-size: 0.8rem;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    padding: 5px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
 
-    @media(max-width:768px){
-      header h1 { font-size: 2.2em; }
-      h2 { font-size: 1.8em; }
-      .gif-container img { max-width: 250px; }
-      .download a img { width: 150px; margin: 10px; }
-    }
-  </style>
+  footer {
+    text-align: center;
+    margin-top: 32px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .updated {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+</style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="logo-badge">DK</div>
+      <h1>DailyKit — Privacy Policy</h1>
+      <p class="subtitle">Your data stays on your device. Always.</p>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <img src="logo.png" alt="JustBook Logo">
-    <h1>Need a Worker? JustBook!</h1>
-    <p>काम हो आपके पास, नज़दीकी वर्कर मिले तुरंत – JustBook के साथ!</p>
-  </header>
-
-  <!-- About Section -->
-  <section>
-    <h2>About Us / हमारे बारे में</h2>
-
-    <div class="para-card">
-      <p>At JustBook, we help you connect with skilled workers instantly.
-Simple, transparent, and hassle-free — trusted professionals at fair and clear pricing.<br><br>
-     JustBook पर हम आपको कुशल और भरोसेमंद वर्करों से तुरंत जोड़ते हैं।
-सरल, पारदर्शी और बिना किसी झंझट के — उचित और स्पष्ट दामों पर प्रोफेशनल सेवाएँ।</p>
+    <div class="card">
+      <p>This app is designed to work offline and does not collect, transmit, or store your personal information on our servers.</p>
+      <p>Information entered into the app, such as names, dates, and notes, is stored locally on your device and is not accessible to us.</p>
+      <p>We do not require an account or login, and we do not sell, share, or use your personal information for advertising or analytics.</p>
     </div>
 
-    <div class="para-card">
-      <p>Our Story: At JustBook, we believe everyone deserves easy access to work and workers. Traditionally, workers stand at labour chowks or wait for opportunities, while people looking for help waste time asking around. We created JustBook to solve this gap with technology.<br><br>
-      JustBook पर हम मानते हैं कि हर किसी को आसानी से काम और वर्करों तक पहुँच मिलनी चाहिए। परंपरागत रूप से वर्कर लेबर चौकों पर खड़े रहते हैं या अवसरों का इंतजार करते हैं, जबकि मदद लेने वाले लोग समय बर्बाद करते हैं। हमने JustBook इस अंतर को तकनीक के माध्यम से पूरा करने के लिए बनाया।</p>
+    <div class="badges">
+      <span class="badge">100% Offline</span>
+      <span class="badge">No Account Needed</span>
+      <span class="badge">No Data Collection</span>
+      <span class="badge">No Ads / Tracking</span>
     </div>
 
-    <div class="para-card">
-      <p>What We Do: We provide a digital space where customers can find and book skilled or unskilled workers directly, and workers can showcase their skills, set their own prices, and get fair opportunities.<br><br>
-      हम एक डिजिटल प्लेटफ़ॉर्म प्रदान करते हैं जहाँ कस्टमर सीधे कुशल या अकुशल वर्कर को ढूंढ और बुक कर सकते हैं, और वर्कर अपनी क्षमताएँ दिखा सकते हैं, कीमत तय कर सकते हैं और उचित अवसर प्राप्त कर सकते हैं।</p>
-    </div>
-
-    <div class="para-card">
-      <p>Our Vision: Our objective is to provide workers with better opportunities and customers with reliable services instantly — in a direct, transparent, and secure manner.<br><br>
-      हमारा उद्देश्य है वर्करों को बेहतर अवसर देना और कस्टमर को भरोसेमंद सेवाएं तुरंत उपलब्ध कराना — सीधे, पारदर्शी और सुरक्षित तरीके से।</p>
-    </div>
-
-    <div class="gif-container">
-      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnAxdXo4cHQycG5qcmg0bzZxbzJhMnNyYzdzZXNvbzV2YXV0Y3Y1aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/X4ub3IJZzsEy6fBnDb/giphy.gif" alt="Handshake Relationship">
-      <p>Connecting Workers & Users / वर्कर और यूज़र को जोड़ना</p>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section>
-    <h2>How It Works / यह कैसे काम करता है</h2>
-
-    <p><strong>For Customers (Hiring people):</strong></p>
-    <div class="steps">
-      <div class="step" data-step="1"><h3>Open the JustBook app</h3><p>JustBook ऐप खोलें।</p></div>
-      <div class="step" data-step="2"><h3>Choose work type</h3><p>जिस प्रकार का काम चाहिए उसे चुनें।</p></div>
-      <div class="step" data-step="3"><h3>See profiles</h3><p>उपलब्ध वर्करों की प्रोफाइल देखें।</p></div>
-      <div class="step" data-step="4"><h3>Select & Book</h3><p>सीधे चुनें और बुक करें।</p></div>
-      <div class="step" data-step="5"><h3>Pay after work</h3><p>काम पूरा होने के बाद सीधे वर्कर को भुगतान करें।</p></div>
-    </div>
-
-    <p style="margin-top:40px;"><strong>For Workers (Finding work):</strong></p>
-    <div class="steps">
-      <div class="step" data-step="1"><h3>Register Free</h3><p>JustBook पर मुफ्त में रजिस्टर करें।</p></div>
-      <div class="step" data-step="2"><h3>Showcase Skills</h3><p>अपनी क्षमताएँ और उपलब्धता दिखाएँ।</p></div>
-      <div class="step" data-step="3"><h3>Get Booked</h3><p>कस्टमर द्वारा सीधे बुक किए जाएँ।</p></div>
-      <div class="step" data-step="4"><h3>Earn Fairly</h3><p>उचित अवसर और भुगतान प्राप्त करें।</p></div>
-    </div>
-  </section>
-
-  <!-- Download Section -->
-  <section class="download">
-    <h2>Download the App / ऐप डाउनलोड करें</h2>
-    <p>JustBook is available on Google Play Store and Apple App Store. / JustBook अब Google Play Store और Apple App Store पर उपलब्ध है।</p>
-    <a href="https://play.google.com/store" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
-    </a>
-    <a href="https://www.apple.com/in/app-store/" target="_blank">
-      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
-    </a>
-  </section>
-
-  <!-- CONTACT SECTION -->
-<section>
-  <h2>Contact Us / संपर्क करें</h2>
-
-  <div class="para-card" style="text-align:center;">
-    <p>
-      Have questions or need support?<br>
-      किसी भी जानकारी या सहायता के लिए संपर्क करें
-    </p>
-
-    <p style="font-size:1.2em; font-weight:600;">
-      📞 Mobile: <a href="tel:7819844425">7819844425</a>
-    </p>
+    <p class="updated">Last updated: September 2026</p>
+    <footer>&copy; 2026 DailyKit. All rights reserved.</footer>
   </div>
-</section>
-
-  <!-- Footer -->
-  <footer>
-    © 2026 JustBook | Empowering Workers, Helping People
-  </footer>
-
 </body>
 </html>
